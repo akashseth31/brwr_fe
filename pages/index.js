@@ -1,4 +1,4 @@
-import Layout from '../components/Layout'
+import { getLayout } from '../components/Layout'
 import Link from 'next/link';
 
 export default function Home() {
@@ -10,10 +10,4 @@ export default function Home() {
   )
 }
 
-Home.getLayout = function getLayout(page) {
-  return (
-    <Layout>
-      {page}
-    </Layout>
-  )
-}
+Home.getLayout = getLayout;

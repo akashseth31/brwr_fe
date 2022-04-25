@@ -1,5 +1,5 @@
 import { useSelector, connect } from 'react-redux';
-import Layout from '../../components/Layout';
+import { getLayout } from '../../components/Layout';
 import { bindActionCreators } from 'redux';
 import { upgradeVersion } from '../../store/project/action';
 
@@ -14,13 +14,7 @@ const Project = (props) => {
 }
 
 // adding a layout to the page
-Project.getLayout = function getLayout(page) {
-  return (
-    <Layout>
-      {page}
-    </Layout>
-  )
-}
+Project.getLayout = getLayout;
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -28,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Project)
+export default connect(null, mapDispatchToProps)(Project);
