@@ -6,7 +6,7 @@ import ProjectPage from '../../components/page/Project'
 
 const Project = (props) => {
   const { project } = useSelector(state => state);
-  const test;
+
   return (
     <ProjectPage
       name={project.name}
