@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "test:watch": "jest --watch",
     "test": "jest",
-    "coverage": "jest --coverage",
+    "test:coverage": "jest --coverage",
     "prepare": "husky install",
-    "pre-commit": "next lint --fix && git add -A"
+    "pre-commit": "next lint"
   },
   "dependencies": {
     "next": "12.1.5",
