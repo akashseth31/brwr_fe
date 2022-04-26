@@ -1,4 +1,4 @@
-import { SampleHeader } from './style';
+import { SampleHeader } from './Header.styled';
 
 const Header = () => {
   return <SampleHeader>This is a sample header!</SampleHeader>

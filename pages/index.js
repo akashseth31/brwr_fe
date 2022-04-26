@@ -1,12 +1,9 @@
-import { getLayout } from '../components/Layout'
-import Link from 'next/link';
+import { getLayout } from '../components/common/Layout'
+import HomePage from '../components/page/Home';
 
 export default function Home() {
   return (
-    <>
-      <h1>Home Page</h1>
-      <Link href='/project'>Go to project</Link>
-    </>
+    <HomePage />
   )
 }
 

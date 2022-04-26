@@ -1,51 +1,37 @@
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
+import { screen } from '@testing-library/react';
 import Project from '../../../pages/project/index';
-// import '@testing-library/jest-dom';
-import renderer from 'react-test-renderer';
-import configureStore from 'redux-mock-store';
+import '@testing-library/jest-dom';
 import reducer, { initialState as project } from '../../../store/project/reducer';
-import { createStore } from "redux";
+import { renderWithState } from '../../../utils/render-wrapper.util';
 
-const mockStore = configureStore([]);
+const initialState = {
+  project,
+};
 
 describe('Project', () => {
-  let store;
   let component;
 
   beforeEach(() => {
-    store = mockStore({ project });
-
-    component = renderer.create(
-      <Provider store={store}>
-        <Project />
-      </Provider>
-    );
+    component = renderWithState(<Project />, reducer, { initialState });
   });
 
   it('should match snapshot', () => {
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(component.asFragment()).toMatchSnapshot();
   });
 
-  // it('renders a heading', () => {
-  //   render(<Project />)
+  it('renders a heading', () => {
+    const heading = screen.getByRole('heading', {
+      name: `${project.name} version ${project.version}`,
+    })
 
-  //   const heading = screen.getByRole('heading', {
-  //     name: /version/i,
-  //   })
+    expect(heading).toBeInTheDocument();
+  });
 
-  //   expect(heading).toBeInTheDocument();
-  // });
+  it('renders a button', () => {
+    const button = screen.getByRole('button', {
+      name: 'Upgrade Version',
+    });
 
-  // it('renders a link', () => {
-  //   render(<Project />);
-
-  //   const link = screen.getByRole('link', {
-  //     name: 'Go to project',
-  //   });
-
-  //   expect(link).toHaveAttribute('href', '/project');
-
-  //   expect(link).toBeInTheDocument();
-  // });
+    expect(button).toBeInTheDocument();
+  });
 });

@@ -1,15 +1,17 @@
 import { useSelector, connect } from 'react-redux';
-import { getLayout } from '../../components/Layout';
+import { getLayout } from '../../components/common/Layout';
 import { bindActionCreators } from 'redux';
 import { upgradeVersion } from '../../store/project/action';
+import ProjectPage from '../../components/page/Project';
 
 const Project = (props) => {
   const { project } = useSelector(state => state);
   return (
-    <>
-      <h1>{project.name} version {project.version}</h1>
-      <button onClick={props.upgradeVersion}>Upgrade Version</button>
-    </>
+    <ProjectPage
+      name={project.name}
+      version={project.version}
+      upgradeVesionFn={props.upgradeVersion}
+    />
   );
 }
 
