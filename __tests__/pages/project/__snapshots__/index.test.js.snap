@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project should match snapshot 1`] = `
+Array [
+  <h1>
+    Borrower platform
+     version 
+    1
+  </h1>,
+  <button
+    onClick={[Function]}
+  >
+    Upgrade Version
+  </button>,
+]
+`;

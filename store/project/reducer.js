@@ -1,6 +1,6 @@
 import { UPGRADE_VERSION } from './actionTypes';
 
-const initialState = {
+export const initialState = {
   name: 'Borrower platform',
   version: 1,
 }

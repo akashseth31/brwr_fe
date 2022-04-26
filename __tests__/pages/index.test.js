@@ -3,9 +3,17 @@ import Home from '../../pages/index';
 import '@testing-library/jest-dom';
 
 describe('Home', () => {
-  it('renders a heading', () => {
-    render(<Home />)
+  let component;
 
+  beforeEach(() => {
+    component = render(<Home />);
+  });
+
+  it('should render', () => {
+    expect(component.asFragment()).toMatchSnapshot();
+  });
+
+  it('renders a heading', () => {
     const heading = screen.getByRole('heading', {
       name: /home page/i,
     })
@@ -14,8 +22,6 @@ describe('Home', () => {
   });
 
   it('renders a link', () => {
-    render(<Home />);
-
     const link = screen.getByRole('link', {
       name: 'Go to project',
     });
