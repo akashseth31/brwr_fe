@@ -7,5 +7,5 @@ export default function HomePage() {
       <h1>Home Page</h1>
       <Link href='/project'>Go to project</Link>
     </>
-  )
+  );
 }

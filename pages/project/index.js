@@ -4,7 +4,7 @@ import { useSelector, connect } from 'react-redux';
 import { getLayout } from '../../components/common/Layout';
 import { bindActionCreators } from 'redux';
 import { upgradeVersion } from '../../store/project/action';
-import ProjectPage from '../../components/page/Project'
+import ProjectPage from '../../components/page/Project';
 
 const Project = ({ upgradeVersion }) => {
   const { project } = useSelector(state => state);
@@ -16,11 +16,11 @@ const Project = ({ upgradeVersion }) => {
       upgradeVesionFn={upgradeVersion}
     ></ProjectPage>
   );
-}
+};
 
 Project.propTypes = {
   upgradeVersion: PropTypes.func,
-}
+};
 
 // adding a layout to the page
 Project.getLayout = getLayout;
@@ -28,7 +28,7 @@ Project.getLayout = getLayout;
 const mapDispatchToProps = (dispatch) => {
   return {
     upgradeVersion: bindActionCreators(upgradeVersion, dispatch),
-  }
-}
+  };
+};
 
 export default connect(null, mapDispatchToProps)(Project);

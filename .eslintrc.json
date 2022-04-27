@@ -9,6 +9,7 @@
       { "avoidEscape": true, "allowTemplateLiterals": false }
     ],
     "no-mixed-operators": "error",
-    "max-len": ["error", {"code": 100, "ignoreUrls": true}]
+    "max-len": ["error", {"code": 100, "ignoreUrls": true}],
+    "semi": [2, "always"]
   }
 }

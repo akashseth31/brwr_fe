@@ -9,12 +9,12 @@ const Layout = ({ children }) => {
     <Header />
     <Body>{children}</Body>
     <Footer />
-  </>
-}
+  </>;
+};
 
 Layout.propTypes = {
-  children: PropTypes.any,
-}
+  children: PropTypes.element.isRequired,
+};
 
 export const getLayout = page => <Layout>{page}</Layout>;
 

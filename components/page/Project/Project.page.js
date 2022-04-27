@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function ProjectPage({ name = '', version = 0, upgradeVesionFn = null }) {
+export default function ProjectPage({ name, version, upgradeVesionFn }) {
   return (
     <>
       <h1>{name} version {version}</h1>
@@ -12,6 +12,10 @@ export default function ProjectPage({ name = '', version = 0, upgradeVesionFn = 
 
 ProjectPage.propTypes = {
   name: PropTypes.string,
-  version: PropTypes.number,
-  upgradeVesionFn: PropTypes.func,
+  version: PropTypes.number.isRequired,
+  upgradeVesionFn: PropTypes.func.isRequired,
+};
+
+ProjectPage.defaultProps = {
+  name: 'Default Text',
 };
