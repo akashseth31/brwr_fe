@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, connect } from 'react-redux';
-import { getLayout } from '../../components/common/Layout';
 import { bindActionCreators } from 'redux';
+import { getLayout } from '../../components/common/Layout';
 import { upgradeVersion } from '../../store/project/action';
 import ProjectPage from '../../components/page/Project';
 
