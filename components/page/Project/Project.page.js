@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 export default function ProjectPage({ name = '', version = 0, upgradeVesionFn = null }) {
   return (
     <>
@@ -6,3 +9,9 @@ export default function ProjectPage({ name = '', version = 0, upgradeVesionFn = 
     </>
   );
 }
+
+ProjectPage.propTypes = {
+  name: PropTypes.string,
+  version: PropTypes.number,
+  upgradeVesionFn: PropTypes.func,
+};

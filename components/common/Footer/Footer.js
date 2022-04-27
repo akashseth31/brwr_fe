@@ -1,3 +1,4 @@
+import React from 'react';
 import { SampleFooter } from './Footer.styled';
 
 const Footer = () => {

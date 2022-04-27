@@ -1,19 +1,25 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, connect } from 'react-redux';
 import { getLayout } from '../../components/common/Layout';
 import { bindActionCreators } from 'redux';
 import { upgradeVersion } from '../../store/project/action';
 import ProjectPage from '../../components/page/Project'
 
-const Project = (props) => {
+const Project = ({ upgradeVersion }) => {
   const { project } = useSelector(state => state);
 
   return (
     <ProjectPage
       name={project.name}
       version={project.version}
-      upgradeVesionFn={props.upgradeVersion}
-    />
+      upgradeVesionFn={upgradeVersion}
+    ></ProjectPage>
   );
+}
+
+Project.propTypes = {
+  upgradeVersion: PropTypes.func,
 }
 
 // adding a layout to the page

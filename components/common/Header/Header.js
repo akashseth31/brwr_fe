@@ -1,3 +1,5 @@
+
+import React from 'react';
 import { SampleHeader } from './Header.styled';
 
 const Header = () => {
